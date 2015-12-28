@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "Moodle Filter",
+    "version": "1.0",
+    "description": "It allows filter a list on Moodle.",
+
+    "icons": {
+        "48": "icon.png",
+        "128": "icon.png"
+    },
+
+    "page_action": {
+        "default_icon": {
+            "19": "icon.png",
+            "38": "icon.png"
+        },
+        "default_title": "Moodle Filter"
+    },
+
+    "permissions": [
+        "tabs",
+        "declarativeContent"
+    ],
+
+    "background": {
+        "scripts": ["JScript/background.js"],
+        "persistent": false
+    },
+
+    "content_scripts": [{
+        "js": ["JScript/jquery.js", "JScript/moodleFilter.js"],
+        "matches": ["http://sae.infnet.edu.br/moodle/*"],
+        "all_frames": true
+    }]
+
+}
